@@ -39,7 +39,7 @@ class FlowerClient(fl.client.NumPyClient):
             #local training
             train(self.model, self.trainloader, optim, 1, self.device)
 
-            return self.get_parameters(), len(self.trainloader), {}
+            return self.get_parameters({}), len(self.trainloader), {}
         
     def evaluate(self, parameters: NDArrays, config: Dict[str, Scalar]):
         self.set_parameters(parameters)
